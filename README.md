@@ -16,6 +16,9 @@ catalogOptions:
   jdbc.password: XXX
 ```
 
+download jar in diretory 
+https://drive.google.com/file/d/1lWWR0w4n5RsRsyjdvvgY7H-lt86UE62Z/view?usp=share_link
+
 create my_config.yaml
 ```
 sourceFormat: ICEBERG
