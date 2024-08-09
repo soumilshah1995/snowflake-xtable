@@ -3,6 +3,34 @@
 # snowflake-xtable
 snowflake-xtable
 
+
+# create table in snowflake 
+```
+
+CREATE OR REPLACE ICEBERG TABLE tempdb.public.samples (
+    id VARCHAR,
+    name VARCHAR,
+    age VARCHAR,
+    city VARCHAR,
+    create_ts VARCHAR
+)
+CATALOG='SNOWFLAKE'
+EXTERNAL_VOLUME='iceberg_external_volume'
+BASE_LOCATION='snowflake_tables/samples';
+
+
+INSERT INTO tempdb.public.samples (id, name, age, city, create_ts)
+VALUES
+   (1, 'John', 25, 'NYC', '2023-09-28 00:00:00'),
+   (2, 'Emily', 30, 'SFO', '2023-09-28 00:00:00'),
+   (3, 'Michael', 35, 'ORD', '2023-09-28 00:00:00'),
+   (4, 'Andrew', 40, 'NYC', '2023-10-28 00:00:00'),
+   (5, 'Bob', 28, 'SEA', '2023-09-23 00:00:00'),
+   (6, 'Charlie', 31, 'DFW', '2023-08-29 00:00:00');
+
+
+   SELECT * FROM tempdb.public.samples
+```
 ##### create Directory called app inside that create folder called catalog.yaml
 ```
 catalogImpl: org.apache.iceberg.snowflake.SnowflakeCatalog
